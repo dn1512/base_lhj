@@ -1,0 +1,20 @@
+andler.onZTreeMouseup;
+          break;
+        case "dblclick" :
+          treeEventCallback = handler.onZTreeDblclick;
+          break;
+        case "contextmenu" :
+          treeEventCallback = handler.onZTreeContextmenu;
+          break;
+      }
+      var proxyResult = {
+        stop: false,
+        node: node,
+        nodeEventType: nodeEventType,
+        nodeEventCallback: nodeEventCallback,
+        treeEventType: treeEventType,
+        treeEventCallback: treeEventCallback
+      };
+      return proxyResult
+    },
+    //def

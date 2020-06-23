@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>生产运营系统</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- 补充icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/v4-shims.css">
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/fontawesome.css">
+  <link href="plugins/fontawesome/fontawesome-iconpicker.min.css" rel="stylesheet">
+  <!-- IonIcons -->
+  <!--<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <!--<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">-->
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed overflow-hidden">
+<div class="wrapper" id="lhjLTE" v-clock>
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- 顶部导航 -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+
+    <!-- 导航栏搜索框 -->
+    <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <!-- 消息提示按钮 -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-danger navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  发信人
+                  <span class="float-right text-sm text-yellow"><i class="fas fa-star"></i></span>
+                  <!-- text-muted 灰色文字 text-danger 红色文字  text-warning  -->
+                </h3>
+                <p class="text-sm">消息标题</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 消息时间</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  发信人
+                  <span class="float-right text-sm text-yellow"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">消息标题</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 消息时间</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  发信人
+                  <span class="float-right text-sm text-yellow"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">消息标题</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 消息时间</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">查看所有消息</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#" v-on:click="openUPSDWin">
+          <i class="far fa-edit"></i>
+          <span class="badge badge-danger navbar-badge"></span>
+        </a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#" v-on:click="openLogoutWin">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="badge badge-danger navbar-badge"></span>
+        </a></li>
+    </ul>
+  </nav>
+
+  <!--<aside class="main-sidebar sidebar-dark-primary elevation-3">
+                                 sidebar-dark-yellow 菜单栏
+  -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- 左上角Logo -->
+    <a href="index.html" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">生产运营支撑系统</span>
+    </a>
+    <!-- 侧边栏导航 -->
+    <div class="sidebar">
+      <!-- 用户窗口 -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="dist/img/avatar5.png" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a id="employeeName" href="javascript:gotoPersonalCenter()" class="d-block">
+            {{employee.eplName}}
+          </a>
+        </div>
+      </div>
+      <!-- 菜单栏 -->
+      <nav class="mt-2" id="sidebar-menu">
+        <!-- 一级菜单 -->
+        <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu"
+            data-accordion="false">
+        </ul>
+      </nav>
+    </div>
+  </aside>
+  <!-- 标题栏 -->
+  <div class="content-wrapper">
+    <div class="content-header m-0 p-0">
+      <nav class="w-100">
+        <div class="nav nav-tabs" id="tab_label" role="tablist">
+          <a class='nav-item nav-link' style='position: relative' href='javascript:' data-id='pages/examples/main.html'
+             role='tab' aria-controls='custom-tabs-one-home' aria-selected='false'>
+            <!--<button type='button' class='close' style='position: absolute; top: -4px;right: -1px;' aria-hidden='true'>×</button>-->
+            <font style='vertical-align: inherit;'>&nbsp;&nbsp;首页&nbsp;&nbsp;</font>
+          </a>
+          <!--<a class='nav-item nav-link' id='custom-tabs-one-profile-tab' style='position: relative' href='#custom-tabs-one-profile' role='tab' aria-controls='custom-tabs-one-home' aria-selected='false'>-->
+          <!--<button type='button' class='close' style='position: absolute; top: -4px;right: -1px;' aria-hidden='true'>×</button>-->
+          <!--<font style='vertical-align: inherit;'>&nbsp;&nbsp;账户管理&nbsp;&nbsp;</font>-->
+          <!--</a>-->
+        </div>
+      </nav>
+    </div>
+
+    <div class="content p-0">
+      <div class="container-fluid p-0">
+        <iframe class="LHJ_iframe m-0 p-0 col-12" allowfullscreen="allowfullscreen" frameborder="0" width="100%"
+                height="100%" :src="main" id="main" name="main" :data-id="main"></iframe>
+      </div>
+    </div>
+
+    <div class="modal fade" id="psdWin">
+      <div class="modal-dialog">
+        <div class="modal-content bg-light">
+          <div class="modal-header">
+            <h4 class="modal-title">修改密码</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <form id="updatePsd" role="form">
+              <div class="form-group">
+                <input type="password" class="form-control" id="oldPsd" placeholder="原密码">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="newPsd" placeholder="新密码">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="reenterPsd" placeholder="重复密码">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-outline-primary" v-on:click="updatePassword">更新</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <div class="modal fade" id="logoutWin">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p class="modal-title"> 系统提示</p>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>是否退出本次登录</p>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" v-on:click="logout">确认</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+  </div>
+
+  <!--<footer class="main-footer">-->
+  <!--<div class="float-right d-none d-sm-block">-->
+  <!--<b>Version</b> 1.0.0-->
+  <!--</div>-->
+  <!--<strong>Copyright &copy; </strong> 刘腾骏独有-->
+  <!--reserved.-->
+  <!--</footer>-->
+
+  <!-- Control Sidebar -->
+  <!--<aside class="control-sidebar control-sidebar-dark">-->
+  <!--&lt;!&ndash; Control sidebar content goes here &ndash;&gt;-->
+  <!--</aside>-->
+</div>
+<input id="employeeId" type="hidden"/>
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- OPTIONAL SCRIPTS -->
+<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="plugins/toastr/toastr.min.js"></script>
+<!-- AdminLTE -->
+<script src="dist/js/adminlte.js"></script>
+<!-- OPTIONAL SCRIPTS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- vue.min.js -->
+<script src="plugins/vue/vue.min.js"></script>
+<script src="dist/js/demo.js"></script>
+<script src="dist/js/pages/dashboard3.js"></script>
+<script src="biscussJS/index.js"></script>
+</body>
+</html>

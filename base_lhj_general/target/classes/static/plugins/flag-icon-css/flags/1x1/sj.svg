@@ -1,0 +1,15 @@
+$(document).ready(function() {
+
+    $('#config-text').keyup(function() {
+      eval($(this).val());
+    });
+    
+    $('.configurator input, .configurator select').change(function() {
+      updateConfig();
+    });
+
+    $('.demo i').click(function() {
+      $(this).parent().find('input').click();
+    });
+
+ 

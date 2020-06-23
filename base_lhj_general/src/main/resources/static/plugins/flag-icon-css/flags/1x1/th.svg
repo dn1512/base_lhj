@@ -1,0 +1,14 @@
+---
+layout: page
+title: Card Refresh Plugin
+---
+
+The card refresh plugin provides the functionality for loading ajax content into the card. 
+
+##### Usage
+This plugin can be activated as a jQuery plugin or using the data api. 
+
+###### Data API
+{: .text-bold }
+
+Activate the plugin by addin

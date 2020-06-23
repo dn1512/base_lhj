@@ -1,0 +1,21 @@
+(function($) {
+  $.extend($.summernote.lang, {
+    'fi-FI': {
+      font: {
+        bold: 'Lihavointi',
+        italic: 'Kursivointi',
+        underline: 'Alleviivaus',
+        clear: 'Tyhjennä muotoilu',
+        height: 'Riviväli',
+        name: 'Kirjasintyyppi',
+        strikethrough: 'Yliviivaus',
+        subscript: 'Alaindeksi',
+        superscript: 'Yläindeksi',
+        size: 'Kirjasinkoko',
+      },
+      image: {
+        image: 'Kuva',
+        insert: 'Lisää kuva',
+        resizeFull: 'Koko leveys',
+        resizeHalf: 'Puolikas leveys',
+        r

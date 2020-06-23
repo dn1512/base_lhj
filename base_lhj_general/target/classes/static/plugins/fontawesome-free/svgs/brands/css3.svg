@@ -1,0 +1,4 @@
+    if ($('#cancelClass').val().length && $('#cancelClass').val() != 'btn-default')
+      options.cancelClass = $('#cancelClass').val();
+
+    $('#config-text').val("$('#demo').daterangepicker(" + JSON.str

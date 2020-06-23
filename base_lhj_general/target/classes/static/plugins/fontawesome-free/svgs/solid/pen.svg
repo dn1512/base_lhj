@@ -1,0 +1,9 @@
+ view.setNodeLineIcos(setting, children[children.length - 1]);
+        }
+        data.nodeIsParent(setting, parentNode, true);
+
+        if (index < 0) {
+          data.nodeChildren(setting, parentNode, children.concat(nodes));
+        } else {
+          params = [index, 0].concat(nodes);
+          children.splice.apply(chi

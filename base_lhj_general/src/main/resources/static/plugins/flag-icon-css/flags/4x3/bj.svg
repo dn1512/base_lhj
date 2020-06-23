@@ -1,0 +1,3 @@
+/*! Summernote v0.8.12 | (c) 2013- Alan Hong and other contributors | MIT license */
+
+!function(e){e.extend(e.summernote.lang,{"fr-FR":{font:{bold:"Gras",italic:"Italique",underline:"Souligné",clear:"Effacer la mise en forme",height:"Interligne",name:"Famille de police",strikethrough:"Barré",superscript:"Exposant",subscript:"Indice",size:"Taille de police"},image:{image:"Image",insert:"Insérer une image",resizeFull:"Taille originale",resizeHalf:"Redimensionner à 50 %",resizeQuarter:"Redi

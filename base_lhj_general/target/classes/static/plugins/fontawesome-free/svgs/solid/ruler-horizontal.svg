@@ -1,0 +1,30 @@
+re {
+  content: "\f2d5"; }
+
+.fa-barcode:before {
+  content: "\f02a"; }
+
+.fa-bars:before {
+  content: "\f0c9"; }
+
+.fa-baseball-ball:before {
+  content: "\f433"; }
+
+.fa-basketball-ball:before {
+  content: "\f434"; }
+
+.fa-bath:before {
+  content: "\f2cd"; }
+
+.fa-battery-empty:before {
+  content: "\f244"; }
+
+.fa-battery-full:before {
+  content: "\f240"; }
+
+.fa-battery-half:before {
+  content: "\f242"; }
+
+.fa-battery-quarter:before {
+  content: "\f243"; }
+

@@ -1,0 +1,16 @@
+ode, clickFlag]);
+      });
+
+      o.bind(c.EXPAND, function (event, treeId, node) {
+        tools.apply(setting.callback.onExpand, [event, treeId, node]);
+      });
+
+      o.bind(c.COLLAPSE, function (event, treeId, node) {
+        tools.apply(setting.callback.onCollapse, [event, treeId, node]);
+      });
+
+      o.bind(c.ASYNC_SUCCESS, function (event, treeId, node, msg) {
+        tools.apply(setting.callback.onAsyncSuccess, [event, treeId, node, msg]);
+      });
+
+      o.bind(c.ASYNC_ER

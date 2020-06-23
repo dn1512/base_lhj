@@ -1,0 +1,10 @@
+configurations {
+    jscompiler
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    jscompil

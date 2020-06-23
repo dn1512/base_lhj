@@ -1,0 +1,27 @@
+//
+// General: Mixins
+//
+
+// Select2 Variant
+@mixin select2-variant($name, $color) {
+  .select2-#{$name} {
+
+    .select2-container--default &,
+    .select2-container--default {
+      &.select2-dropdown,
+      .select2-dropdown,
+      .select2-search--inline {
+        .select2-search__field {
+          &:focus {
+            border: $input-border-width solid lighten($color, 25%);
+          }
+        }
+      }
+
+      .select2-results__option--highlighted {
+        background-color: $color;
+        color: color-yiq($color);
+
+        &[aria-selected] {
+          &,
+     

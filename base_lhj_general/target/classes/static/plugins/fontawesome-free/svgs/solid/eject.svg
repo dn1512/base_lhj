@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-im" viewBox="0 0 640 480">
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".7" d="M-77.6 0H605v512H-77.6z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#a)" transform="translate(72.8) scale(.94)">
+    <path fill="#ba0000" fill-rule="evenodd" d="M629.4 512H-102V0h731.4z"/>
+    <path fill="#ffef0

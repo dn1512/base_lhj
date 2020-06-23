@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="include/header_css::header('')"></head>
+<body>
+
+<link rel="stylesheet" th:href="@{/css/components/utable/utable.css}">
+<link rel="stylesheet" th:href="@{/css/components/form/main.css}">
+<style>
+</style>
+
+<div id="dpLTE" class="container-fluid">
+    <p class="tip"><span></span></p>
+    <div class="bg"></div>
+    <div class="sx">
+        <input type="text" id="gl" value="" placeholder="" style="border: 0px;border-radius: 2px"/>
+        <button type="submit" id="ss" class="btn btn-primary btn-sm editable-submit"><i
+         

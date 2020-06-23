@@ -1,0 +1,6 @@
+pol {
+            background-color: @grid_color_1;
+        }
+
+        &-text {
+          

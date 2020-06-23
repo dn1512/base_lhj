@@ -1,0 +1,3 @@
+/*! Summernote v0.8.12 | (c) 2013- Alan Hong and other contributors | MIT license */
+
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?e(require("jquery")):"function"==typeof define&&define.amd?define(["jquery"],e):e((t=t||self).jQuery)}(this,function(C){"use strict";C=C&&C.hasOwnProperty("default")?C.default:C;var i=function(){function t(t,e,o,n){this.markup=t,this.children=e,this.options=o,this.callback=n}return t.prototype.render=function(t){var o=C(this.markup);if(this.options&&this.options.contents&&o.ht

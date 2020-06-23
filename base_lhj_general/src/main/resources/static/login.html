@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>请登录</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- IonIcons -->
+    <!--<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+</head>
+
+<body class="hold-transition login-page hold-transition sidebar-mini">
+    <!--<aside class="main-sidebar sidebar-dark-primary elevation-3">
+                                   sidebar-dark-yellow 菜单栏
+    -->
+    <!-- 标题栏 -->
+<div class="login-box">
+    <div class="card-body login-card-body">
+        <p class="login-box-msg">请登录</p>
+
+        <form>
+            <!--<div v-if="error">-->
+                <!--<p class="error text-center">-->
+                    <!--<i class="fa fa-exclamation-triangle"></i> {{errorMsg}}-->
+                <!--</p>-->
+            <!--</div>-->
+            <div class="input-group mb-3">
+                <input id="accountName" type="text" class="form-control" placeholder="用户名">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-user"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input id="accountPassword" type="password" class="form-control" placeholder="密码">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-8">
+                <div class="icheck-primary">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">
+                        记住我
+                    </label>
+                </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-4">
+                <button id="loginBtn" class="btn btn-primary btn-block" v-on:click="login">登录</button>
+            </div>
+            <!-- /.col -->
+        </div>
+        <div class="social-auth-links text-center mb-3">
+            <hr>
+            <a href="#" class="btn btn-block btn-primary">
+              <i class="fab fa-pagelines mr-2"></i>申请账号
+            </a>
+            <a href="#" class="btn btn-block btn-danger">
+              <i class="fab fa-modx mr-2"></i>找回密码
+            </a>
+        </div>
+        <!-- /.social-auth-links -->
+    </div>
+</div>
+
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- OPTIONAL SCRIPTS -->
+<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="plugins/toastr/toastr.min.js"></script>
+<!-- AdminLTE -->
+<script src="dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<!--<script src="dist/js/demo.js"></script>-->
+<script src="biscussJS/login.js"></script>
+</body>
+</html>

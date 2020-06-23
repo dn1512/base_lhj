@@ -1,0 +1,25 @@
+/*
+ * JQuery zTree core
+ * v3.5.43
+ * http://treejs.cn/
+ *
+ * Copyright (c) 2010 Hunter.z
+ *
+ * Licensed same as jquery - MIT License
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ * Date: 2020-04-04
+ */
+
+(function ($) {
+  var settings = {}, roots = {}, caches = {},
+    //default consts of core
+    _consts = {
+      className: {
+        BUTTON: "button",
+        LEVEL: "level",
+        ICO_LOADING: "ico_loading",
+        SWITCH: "switch",
+        NAME: 'node_name'
+      },
+      event: 

@@ -1,0 +1,5 @@
+ency : {decimalSeparator:".", thousandsSeparator: ",", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0.00'},
+		date : {
+			dayNames:   [
+				"Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat",
+				"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satur

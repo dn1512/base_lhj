@@ -1,0 +1,8 @@
+(function($) {
+    /**
+     * Japanese language package
+     * Translated by @tsuyoshifujii
+     */
+    $.fn.bootstrapValidator.i18n = $.extend(true, $.fn.bootstrapValidator.i18n, {
+        base64: {
+            'default': '有効なBase64

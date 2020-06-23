@@ -1,0 +1,3 @@
+/*! Summernote v0.8.12 | (c) 2013- Alan Hong and other contributors | MIT license */
+
+!function(e){e.extend(e.summernote.lang,{"sk-SK":{font:{bold:"Tučné",italic:"Kurzíva",underline:"Podčiarknutie",clear:"Odstrániť štýl písma",height:"Výška riadku",strikethrough:"Prečiarknuté",subscript:"Subscript",superscript:"Superscript",size:"Veľkosť písma"},image:{image:"Obrázok",insert:"Vložiť obrázok",resizeFull:"Pôvodná veľkosť",resizeHalf:"Polovičná veľkosť",resizeQuarter:"Štvrtinová veľkosť",floatLeft:"Umiestniť doľava",floatRight:"Umiestniť doprava",floatNone:"Bez zarovnania",shapeRounded:"Shape: Rounded",shapeCircle:"Shape: Circle",shapeT

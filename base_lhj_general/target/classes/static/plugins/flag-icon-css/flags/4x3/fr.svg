@@ -1,0 +1,21 @@
+//
+// Component: Direct Chat
+//
+ 
+.direct-chat {
+  .card-body {
+    overflow-x: hidden;
+    padding: 0;
+    position: relative;
+  }
+
+  &.chat-pane-open {
+    .direct-chat-contacts {
+      @include translate(0, 0);
+    }
+  }
+
+
+  &.timestamp-light {
+    .direct-chat-timestamp {
+      color: li

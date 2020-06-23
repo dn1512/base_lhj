@@ -1,0 +1,32 @@
+//
+// Component: Timeline
+//
+
+.timeline {
+  margin: 0 0 45px;
+  padding: 0;
+  position: relative;
+  // The line
+  &::before {
+    @include border-radius($border-radius);
+    background: $gray-300;
+    bottom: 0;
+    content: '';
+    left: 31px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 4px;
+  }
+  // Element
+  > div {
+    &::before,
+    &::after {
+      content: "";
+      display: table;
+    }
+
+    margin-bottom: 15px;
+    margin-right: 10px;
+    position: relative;
+ 

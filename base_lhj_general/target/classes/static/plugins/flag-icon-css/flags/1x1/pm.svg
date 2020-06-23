@@ -1,0 +1,19 @@
+body {
+    font-size: 15px;
+    line-height: 1.6em;
+    position: relative;
+    margin: 0;
+}
+
+.navbar .nav-item {
+    padding: 8px 0 8px 20px;
+}
+
+.navbar .nav-link {
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+   

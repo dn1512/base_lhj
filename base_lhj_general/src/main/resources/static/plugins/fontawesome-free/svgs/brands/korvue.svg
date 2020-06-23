@@ -1,0 +1,13 @@
+B: 'United Kingdom',
+                MA: 'Morocco',
+                PK: 'Pakistan',
+                RO: 'Romania',
+                RU: 'Russia',
+                SK: 'Slovakia',
+                TH: 'Thailand',
+                US: 'USA',
+                VE: 'Venezuela'
+            }
+        },
+        regexp: {
+            'defaul

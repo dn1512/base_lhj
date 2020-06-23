@@ -1,0 +1,35 @@
+/*Grid*/
+.ui-jqgrid {
+	position: relative; 
+	border: 1px solid #ddd;      /*default*/
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.ui-jqgrid .ui-jqgrid-view {
+	position: relative;
+	left:0; 
+	top: 0; 
+	padding: 0;
+}
+.ui-jqgrid .ui-common-table {}
+
+/* Caption*/
+.ui-jqgrid .ui-jqgrid-titlebar {
+	font-weight: normal;
+	min-height:37px; 
+	padding: 4px 8px; 
+	position: relative; 
+	margin-right: 2px;
+	border-bottom: 1px solid #ddd; /*default*/
+
+}
+.ui-jqgrid .ui-jqgrid-caption {
+	text-align: left;
+}
+.ui-jqgrid .ui-jqgrid-title { 
+	/*padding-top: .475rem; */
+	vertical-align: middle;
+	line-height: 28px;
+}
+.ui-jqgrid .ui-jqgrid-titl

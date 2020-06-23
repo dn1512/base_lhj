@@ -1,0 +1,4 @@
+/*
+ Copyright (C) Federico Zivolo 2019
+ Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
+ */function a(a,b){if(1!==a.nodeType)return[];const c=a.ownerDocument.defaultView,d=c.getComputedStyle

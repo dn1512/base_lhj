@@ -1,0 +1,8 @@
+{
+	"version": 3,
+	"file": "adminlte.plugins.css",
+	"sources": [
+		"../../../build/scss/AdminLTE-plugins.scss",
+		"../../../node_modules/bootstrap/scss/_functions.scss",
+		"../../../build/scss/_bootstrap-variables.scss",
+		"../../../node_modules/bootstrap/scss/_mixins

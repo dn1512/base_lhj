@@ -1,0 +1,6 @@
+$(function () {
+    //型号
+    ajaxShow('get','/sys/config/product/selectAllProductModels?type=Z',function (sdata) {
+        //console.log(sdata);
+        var str = '', defaultArr = [];
+        for (var i = 0; i < sdata.length; i+

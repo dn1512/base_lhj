@@ -1,0 +1,7 @@
+e-border-radius;
+    border-top-right-radius: $bootstrap-switch-handle-border-radius;
+  }
+
+  &.bootstrap-switch-off .bootstrap-switch-label,
+  &.bootstrap-switch-inverse.bootstrap-switch-on .bootstrap-switch-label {
+    border-bottom-left-radius

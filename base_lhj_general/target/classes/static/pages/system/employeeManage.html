@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>员工管理</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- DataTables -->
+  <script type="text/ecmascript" src="../../plugins/jquery/jquery.js"></script>
+  <script type="text/ecmascript" src="../../plugins/jqGrid-master/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="../../plugins/jqGrid-master/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <script src="../../plugins/jqGrid-master/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="../../plugins/jqGrid-master/css/ui.jqgrid-bootstrap4.css" />
+  <!-- This is the Javascript file of jqGrid -->
+  <script type="text/ecmascript" src="../../plugins/jqGrid-master/js/jquery.jqGrid.js"></script>
+  <!-- We support more than 40 localizations -->
+  <script type="text/ecmascript" src="../../plugins/jqGrid-master/js/i18n/grid.locale-cn.js"></script>
+  <!-- vue -->
+  <script type="text/ecmascript" src="../../plugins/vue/vue.min.js"></script>
+  <!-- This is the localization file of the grid controlling messages, labels, etc.
+  <!-- A link to a jQuery UI ThemeRoller theme, more than 22 built-in and many more custom -->
+  <!-- The link to the CSS that the grid needs -->
+  <!-- AdminLTE App -->
+  <script src="../../dist/js/adminlte.min.js"></script>
+  <!--&lt;!&ndash; AdminLTE for demo purposes &ndash;&gt;-->
+  <script src="../../dist/js/demo.js"></script>
+  <!-- Toastr -->
+  <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
+  <script src="../../plugins/toastr/toastr.min.js"></script>
+  <!-- 图标 -->
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- daterangepicker -->
+  <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
+  <script src="../../plugins/daterangepicker/moment.min.js"></script>
+  <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- validator -->
+  <link rel="stylesheet" href="../../plugins/bootstrapvalidator/dist/css/bootstrapValidator.css"/>
+  <script type="text/javascript" src="../../plugins/bootstrapvalidator/dist/js/bootstrapValidator.js"></script>
+  <!-- 补充icons -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/v4-shims.css">
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/fontawesome.css">
+  <!-- bootstrap-select -->
+  <link rel="stylesheet" href="../../plugins/select2/css/select2.min.css">
+  <script type="text/javascript" src="../../plugins/select2/js/select2.min.js"></script>
+  <script type="text/javascript" src="../../plugins/select2/js/i18n/zh-CN.js"></script>
+  <style>
+    td {padding:5px;}
+  </style>
+</head>
+<body>
+  <div id="gridDiv" class="col-sm-12">
+    <table id="jqGrid"></table>
+    <div id="jqGridPager"></div>
+  </div>
+  <div class="modal fade" id="empEditWin" data-backdrop="static" v-cloak>
+    <div class="modal-dialog">
+      <div class="modal-content bg-light">
+        <div class="modal-header">
+          <h4 class="modal-title">编辑员工</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <form id="empForm">
+              <table class="table">
+                <tr>
+                  <td class="formTitle">
+                    <label for="eplName">  姓名：</label>
+                  </td>
+                  <td class="formValue">
+                    <input type="text" class="form-control" id="eplName" name="eplName" placeholder="姓名" v-model="employee.eplName">
+                  </td>
+                  <td class="formTitle">
+                    <label>  性别：</label>
+                  </td>
+                  <td class="formValue">
+                    <!--<input type="text" class="form-control" id="eplGender" placeholder="性别" aria-label="性别:" v-model="employee.eplGender">-->
+                    <select id="eplGender" class="bootstrap-select form-control" name="eplGender" data-placeholder="性别" v-model="employee.eplGender">
+                      <option value="男">男</option>
+                      <option value="女">女</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="formTitle">
+                    <label>  身份证号：</label>
+                  </td>
+                  <td class="formValue">
+                    <input type="text" class="form-control" id="eplIdNumber" name="eplIdNumber" placeholder="身份证号" v-model="employee.eplIdNumber">
+                  </td>
+                  <td class="formTitle">
+                    <label>  出生日期：</label>
+                  </td>
+                  <td class="formValue">
+                    <input type="text" class="form-control" id="eplDateOfBirth" name="eplDateOfBirth" placeholder="出生日期" aria-label="出生日期:" v-model="employee.eplDateOfBirth">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="formTitle">
+                    <label>  学历：</label>
+                  </td>
+                  <td class="formValue">
+                    <input type="text" class="form-control" id="eplEducation" name="eplEducation" placeholder="学历（大学名+学位）" aria-label="学历:" v-model="employee.eplEducation">
+                  </td>
+                  <td class="formTitle">
+                    <label>  联系电话：</label>
+                  </td>
+                  <td class="formValue">
+                    <input type="text" class="form-control" id="eplTel" name="eplTel" placeholder="联系电话" aria-label="联系电话:" v-model="employee.eplTel">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="formTitle">
+                    <label>  邮箱：</label>
+                  </td>
+                  <td class="formValue">
+                    <input type="email" class="form-control" id="eplEmail" name="eplEmail" placeholder="邮箱" aria-label="邮箱" v-model="employee.eplEmail">
+                  </td>
+                  <td class="formTitle">
+                    <label> 职位：</label>
+                  </td>
+                  <td class="formValue">
+                    <input type="text" class="form-control" id="positionName" name="positionName" placeholder="职位" aria-label="职位" v-model="employee.positionName">
+                  </td>
+                </tr>
+              </table>
+              <input type="hidden" id="id" v-model="employee.id">
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-outline-primary" v-on:click="saveEmp">确认</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="checkMod" data-backdrop="static" v-cloak>
+    <div class="modal-dialog">
+      <div class="modal-content bg-light">
+        <div class="modal-header">
+          <h4 class="modal-title">请确认</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            是否删除用户？
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-outline-primary" onclick="deleteSel()">确认</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../biscussJS/system/employee.js"></script>
+</body>
+</html>

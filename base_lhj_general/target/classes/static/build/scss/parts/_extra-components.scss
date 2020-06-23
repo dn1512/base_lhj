@@ -1,0 +1,8 @@
+//
+// Plugin: iCheck Bootstrap
+//
+
+// iCheck colors (theme colors)
+@each $name, $color in $theme-colors {
+  .icheck-#{$name} > input:first-child:not(:checked):not(:disabled):hover + label::before,
+  .icheck

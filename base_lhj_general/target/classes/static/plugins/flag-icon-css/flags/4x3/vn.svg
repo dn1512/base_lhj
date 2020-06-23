@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="include/header_css::header('')"></head>
+<body>
+<style>
+	#dataGrid tbody tr td{
+		white-space : nowrap;
+	}
+	#dataGrid tbody tr td:last-child{
+		max-width: 800px;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		overflow: hidden;
+	}
+	 .fixed-table-body{
+		 overflow-x:auto;
+		 overflow-y:auto;
+	 }
+</style>
+<div id="dpLTE" class="container-fluid box box-primary" v-cloak>
+	<div class="row">

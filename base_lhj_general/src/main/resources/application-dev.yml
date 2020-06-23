@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/axle_simple?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    tomcat:
+      max-active: 5
+  jpa:
+    database: MYSQL
+    generate-ddl: true
+    properties:
+      hibernate:
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      ddl-auto: update
+#      DDL配置说明
+#      ddl-auto:create----每次运行该程序，没有表格会新建表格，表内有数据会清空
+#      ddl-auto:create-drop----每次程序结束的时候会清空表
+#      ddl-auto:update----每次运行程序，没有表格会新建表格，表内有数据不会清空，只会更新
+#      ddl-auto:validate----运行程序会校验数据与数据库的字段类型是否相同，不同会报错
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    show-sql: true

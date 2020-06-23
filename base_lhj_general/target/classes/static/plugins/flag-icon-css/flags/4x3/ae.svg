@@ -1,0 +1,17 @@
+/**
+ * js
+ */
+
+$(function () {
+	initialPage();
+	getGrid();
+});
+
+function initialPage() {
+	$(window).resize(function() {
+		$('#dataGrid').bootstrapTable('resetView', {height: $(window).height()-54});
+	});
+}
+
+function getGrid() {
+	$('#dataG

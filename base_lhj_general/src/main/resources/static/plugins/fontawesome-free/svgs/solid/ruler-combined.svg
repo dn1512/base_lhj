@@ -1,0 +1,40 @@
+corporated:before {
+  content: "\f6af"; }
+
+.fa-ad:before {
+  content: "\f641"; }
+
+.fa-address-book:before {
+  content: "\f2b9"; }
+
+.fa-address-card:before {
+  content: "\f2bb"; }
+
+.fa-adjust:before {
+  content: "\f042"; }
+
+.fa-adn:before {
+  content: "\f170"; }
+
+.fa-adobe:before {
+  content: "\f778"; }
+
+.fa-adversal:before {
+  content: "\f36a"; }
+
+.fa-affiliatetheme:before {
+  content: "\f36b"; }
+
+.fa-air-freshener:before {
+  content: "\f5d0"; }
+
+.fa-airbnb:before {
+  content: "\f834"; }
+
+.fa-algolia:before {
+  content: "\f36c"; }
+
+.fa-align-center:before {
+  content: "\f037"; }
+
+.fa-align

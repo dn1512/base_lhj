@@ -1,0 +1,1 @@
+obal"){var evnt,i,params={bubbles:true,cancelable:true,detail:arguments[1]};if(document.createEvent){try{evnt=new CustomEvent(ev,params)}catch(e){evnt=document.createEvent("CustomEvent");evnt.initCustomEvent(ev,params.bubbles,params.cancelable,params.detail)}if(events.type)DependencyLib.exten

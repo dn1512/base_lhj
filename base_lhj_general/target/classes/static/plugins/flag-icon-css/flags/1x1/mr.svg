@@ -1,0 +1,12 @@
+(function($) {
+    /**
+     * Spanish language package
+     * Translated by @vadail
+     */
+    $.fn.bootstrapValidator.i18n = $.extend(true, $.fn.bootstrapValidator.i18n, {
+        base64: {
+            'default': 'Por favor introduce un valor válido en base 64'
+        },
+        between: {
+            'default': 'Por favor introduce un valor entre %s y %s',
+            notInclusive: 'Por favor introduce un valor sólo entre

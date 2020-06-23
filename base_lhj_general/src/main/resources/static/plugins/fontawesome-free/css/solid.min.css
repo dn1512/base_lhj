@@ -1,0 +1,19 @@
+/*!
+ *
+ * Jquery Mapael - Dynamic maps jQuery plugin (based on raphael.js)
+ * Requires Mapael
+ *
+ * Map of World by country
+ * Miller projection
+ *
+ * @source http://code.highcharts.com/mapdata/
+ *
+ * @deprecated : this map will be definitely moved to 'mapael-maps' repository starting from the next major release (3.0.0).
+ * You can use instead https://github.com/neveldo/mapael-maps/blob/master/world/world_countries_miller.js
+ */
+(function (factory) {
+    if (typeof exports === 'object') {
+        // CommonJS
+        module.exports = factory(require('jquery'), require('jquery-mapael'));
+    } else if (typeof define === 'function' && define.amd) {
+        // AMD

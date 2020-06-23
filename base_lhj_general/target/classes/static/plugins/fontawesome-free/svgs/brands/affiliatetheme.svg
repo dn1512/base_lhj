@@ -1,0 +1,3 @@
+/*! Summernote v0.8.12 | (c) 2013- Alan Hong and other contributors | MIT license */
+
+!function(e){e.extend(e.summernote.lang,{"sl-SI":{font:{bold:"Krepko",italic:"Ležeče",underline:"Podčrtano",clear:"Počisti oblikovanje izbire",height:"Razmik med vrsticami",name:"Pisava",strikethrough:"Prečrtano",subscript:"Podpisano",superscript:"Nadpisano",size:"Velikost pisave"},image:{image:"Slika",insert:"V

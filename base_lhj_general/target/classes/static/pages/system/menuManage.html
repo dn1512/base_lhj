@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>系统菜单</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <!--<link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">-->
+  <!-- Theme style -->
+  <!-- The jQuery library is a prerequisite for all jqSuite products -->
+  <script type="text/ecmascript" src="../../plugins/jquery/jquery.js"></script>
+  <script type="text/ecmascript" src="../../plugins/jqGrid-master/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="../../plugins/jqGrid-master/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <script src="../../plugins/jqGrid-master/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="../../plugins/jqGrid-master/css/ui.jqgrid-bootstrap4.css" />
+  <!-- This is the Javascript file of jqGrid -->
+  <script type="text/ecmascript" src="../../plugins/jqGrid-master/js/jquery.jqGrid.js"></script>
+  <!-- We support more than 40 localizations -->
+  <script type="text/ecmascript" src="../../plugins/jqGrid-master/js/i18n/grid.locale-cn.js"></script>
+  <!-- validator -->
+  <link rel="stylesheet" href="../../plugins/bootstrapvalidator/dist/css/bootstrapValidator.css"/>
+  <script type="text/javascript" src="../../plugins/bootstrapvalidator/dist/js/bootstrapValidator.js"></script>
+  <!-- vue -->
+  <script type="text/ecmascript" src="../../plugins/vue/vue.min.js"></script>
+  <!-- This is the localization file of the grid controlling messages, labels, etc.
+  <!-- A link to a jQuery UI ThemeRoller theme, more than 22 built-in and many more custom -->
+  <!-- The link to the CSS that the grid needs -->
+  <!-- AdminLTE App -->
+  <script src="../../dist/js/adminlte.min.js"></script>
+  <!--&lt;!&ndash; AdminLTE for demo purposes &ndash;&gt;-->
+  <script src="../../dist/js/demo.js"></script>
+  <!-- Toastr -->
+  <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
+  <script src="../../plugins/toastr/toastr.min.js"></script>
+  <!-- 图标 -->
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- 补充icons -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/v4-shims.css">
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/fontawesome.css">
+  <!-- 图标选择器 -->
+  <link href="../../plugins/fontawesome/fontawesome-iconpicker.min.css" rel="stylesheet">
+  <script src="../../plugins/fontawesome/fontawesome-iconpicker.js"></script>
+  <!-- select2 -->
+  <link href="../../plugins/select2/css/select2.min.css" rel="stylesheet">
+  <script src="../../plugins/select2/js/select2.min.js"></script>
+</head>
+<body>
+<div id="gridDiv" class="col-sm-12">
+  <table id="jqGrid"></table>
+  <div id="jqGridPager"></div>
+  <div class="modal fade" id="menuAddWin" data-backdrop="static" v-cloak>
+    <div class="modal-dialog">
+      <div class="modal-content bg-light">
+        <div class="modal-header">
+          <h4 class="modal-title">编辑菜单</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <form id="menuForm">
+            <input type="hidden" id="id" v-model="menu.id">
+            <input type="hidden" id="parentId" v-model="menu.parentId">
+            <input type="hidden" id="level" v-model="menu.level">
+            <input type="hidden" id="isLeaf" v-model="menu.isLeaf">
+            <!--<input type="hidden" id="expanded" v-model="menu.expanded">-->
+            <div class="form-group">
+              <input type="text" class="form-control" id="menuName" name="menuName" placeholder="菜单名称" v-model="menu.menuName" v-on:input="bindIcon" >
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="url" placeholder="菜单地址" v-model="menu.url" v-on:input="bindIcon">
+            </div>
+            <div class="form-group">
+              <div class="input-group iconpicker-container">
+                <input id="icon" placeholder="菜单图标" readonly="true" v-model="menu.icon" data-placement="bottomRight" class="form-control icp icp-auto iconpicker-element iconpicker-input" type="text">
+                <span class="input-group-addon"><i :class="menu.icon"></i></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="orderNum" name="orderNum" placeholder="排序号" v-model="menu.orderNum" v-on:input="bindIcon">
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="type" >类型:</label>
+              <div class="col-sm-4 btn-group">
+                <select class="form-control" id="type" name="type" placeholder="类型" v-model="menu.type" v-on:input="bindIcon">
+                  <option style='display: none'></option>
+                  <option value="0">目录</option>
+                  <option value="1">菜单</option>
+                </select>
+              </div>
+              <label class="col-sm-2 control-label" for="expanded">是否展开:</label>
+              <div class="col-sm-4 btn-group">
+                <select class="form-control" id="expanded" placeholder="是否展开" v-model="menu.expanded" v-on:input="bindIcon">
+                  <option style='display: none'></option>
+                  <option value="true">是</option>
+                  <option value="false">否</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-outline-primary" v-on:click="saveMenu">确认</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+  </div>
+  <div class="modal fade" id="checkMod" data-backdrop="static" v-cloak="">
+      <div class="modal-dialog">
+        <div class="modal-content bg-light">
+          <div class="modal-header">
+            <h4 class="modal-title">请确认</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              是否删除菜单？
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-outline-primary" onclick="deleteSel()">确认</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- 页面js -->
+<script src="../../biscussJS/system/menu.js"></script>
+</body>
+</html>

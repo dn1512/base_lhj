@@ -1,0 +1,11 @@
+/**
+ * Bootstrap Table Russian translation
+ * Author: Dunaevsky Maxim <dunmaksim@yandex.ru>
+ */
+(function ($) {
+    'use strict';
+    $.fn.bootstrapTable.locales['ru-RU'] = {
+        formatLoadingMessage: function () {
+            return 'Пожалуйста, подождите, идёт загрузка...';
+        },
+        formatRecordsPe

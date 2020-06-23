@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="include/header_css::header('')"></head>
+<body>
+
+<link rel="stylesheet" th:href="@{/css/components/utable/utable.css}">
+<link rel="stylesheet" th:href="@{/css/components/form/main.css}">
+<style>
+</style>
+
+<div id="dpLTE" class="container-fluid">
+   

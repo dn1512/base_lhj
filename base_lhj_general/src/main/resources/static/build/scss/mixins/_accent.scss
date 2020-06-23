@@ -1,0 +1,18 @@
+package org.optaplanner.examples.Forecast.domain.solver.move;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.Stack;
+import java.util.HashSet;
+
+public class circulation {
+
+    static int len_v=10;   //点的个数
+    static int len_e=15;   //边的个数
+    private static boolean visited2[]=new boolean[len_v];  //DFS中被访问的点
+    static Vertex ver[]=new Vertex[len_v];  //存放点
+    static int num[]=new int[len_v];  //链表中此时被访问的点
+    static int c[]=new int[len_v];  //该节点是否被访问过
+    static Stack<Vertex> s=new Stack<Vertex>();  

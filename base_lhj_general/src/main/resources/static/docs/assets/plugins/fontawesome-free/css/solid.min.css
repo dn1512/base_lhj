@@ -1,0 +1,20 @@
+package com.tj.lhj.system.account.service;
+
+import com.tj.lhj.common.ResultDto;
+import com.tj.lhj.system.account.enti.AccountEntity;
+import com.tj.lhj.system.account.enti.AccountToken;
+import com.tj.lhj.system.account.repo.AccountTokenRepository;
+import com.tj.lhj.utils.DateUtils;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.UUID;
+
+@Service
+@Slf4j
+public class SySAccountTokenService {
+    @Autowired AccountTokenRepository acco

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>账户管理</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/ecmascript" src="../../plugins/jquery/jquery.js"></script>
+  <script type="text/ecmascript" src="../../plugins/jqGrid-master/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="../../plugins/jqGrid-master/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <script src="../../plugins/jqGrid-master/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="../../plugins/jqGrid-master/css/ui.jqgrid-bootstrap4.css" />
+  <!-- This is the Javascript file of jqGrid -->
+  <script type="text/ecmascript" src="../../plugins/jqGrid-master/js/jquery.jqGrid.js"></script>
+  <!-- We support more than 40 localizations -->
+  <script type="text/ecmascript" src="../../plugins/jqGrid-master/js/i18n/grid.locale-cn.js"></script>
+  <!-- vue -->
+  <script type="text/ecmascript" src="../../plugins/vue/vue.min.js"></script>
+  <!-- This is the localization file of the grid controlling messages, labels, etc.
+  <!-- A link to a jQuery UI ThemeRoller theme, more than 22 built-in and many more custom -->
+  <!-- The link to the CSS that the grid needs -->
+  <!-- AdminLTE App -->
+  <script src="../../dist/js/adminlte.min.js"></script>
+  <!--&lt;!&ndash; AdminLTE for demo purposes &ndash;&gt;-->
+  <script src="../../dist/js/demo.js"></script>
+  <!-- Toastr -->
+  <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
+  <script src="../../plugins/toastr/toastr.min.js"></script>
+  <!-- 图标 -->
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- validator -->
+  <link rel="stylesheet" href="../../plugins/bootstrapvalidator/dist/css/bootstrapValidator.css"/>
+  <script type="text/javascript" src="../../plugins/bootstrapvalidator/dist/js/bootstrapValidator.js"></script>
+  <!-- 补充icons -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/v4-shims.css">
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/fontawesome.css">
+  <!-- 图标选择器 -->
+  <link href="../../plugins/fontawesome/fontawesome-iconpicker.min.css" rel="stylesheet">
+  <script src="../../plugins/fontawesome/fontawesome-iconpicker.js"></script>
+  <!-- select2 -->
+  <link href="../../plugins/select2/css/select2.min.css" rel="stylesheet">
+  <script src="../../plugins/select2/js/select2.min.js"></script>
+  <!-- ztree -->
+  <link href="../../plugins/ztree/css/metroStyle/metroStyle.css" rel="stylesheet">
+  <script src="../../plugins/ztree/js/jquery.ztree.all.js"></script>
+  <style>
+    td {padding:5px;}
+  </style>
+</head>
+<body>
+<div id="gridDiv" class="col-sm-12">
+  <table id="jqGrid"></table>
+  <div id="jqGridPager"></div>
+</div>
+<div class="modal fade" id="roleEditWin" data-backdrop="static" v-cloak>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content bg-light">
+        <div class="modal-header">
+          <h4 class="modal-title">编辑角色</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <form id="roleForm">
+            <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="roleName" style='font-size:16px;line-height:34px;'>角色名称<font face="宋体" color="red">*</font></label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="roleName" name="roleName" placeholder="角色名称" v-model="role.roleName" >
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="roleSign" style='font-size:16px;line-height:34px;'>角色标识<font face="宋体" color="red">*</font></label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="roleSign" name="roleSign" placeholder="角色标识" v-model="role.roleSign" >
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="orgId" style='font-size:16px;line-height:34px;'>所属机构</label>
+                <div class="col-sm-10">
+                  <!--<input type="text" class="form-control" id="orgId" placeholder="所属机构" v-model="role.orgId" >-->
+                  <select class="form-control" id="orgId" name="orgId" placeholder="所属机构" v-model="role.orgId" >
+                    <option style='display: none'></option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="remark" style='font-size:16px;line-height:34px;'>备注</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" id="remark" name="remark" placeholder="备注" v-model="role.remark" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-outline-primary" v-on:click="saveRole">确认</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="modal fade" id="checkMod" data-backdrop="static" v-cloak>
+  <div class="modal-dialog">
+    <div class="modal-content bg-light">
+      <div class="modal-header">
+        <h4 class="modal-title">请确认</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          是否删除角色？
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-outline-primary" onclick="deleteSel()">确认</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="menusWin" data-backdrop="static" v-cloak>
+  <div class="modal-dialog">
+    <div class="modal-content modal-sm">
+      <div class="modal-header">
+        <h4 class="modal-title">操作权限</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body" style="height:450px">
+        <div class="form-group" style="width:280px; height:400px; overflow:auto;">
+          <ul id="menuTree" class="ztree"></ul>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-outline-primary" onclick="saveMenuRole()">确认</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../biscussJS/system/role.js"></script>
+</body>
+</html>

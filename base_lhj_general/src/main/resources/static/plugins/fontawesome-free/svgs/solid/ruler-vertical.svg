@@ -1,0 +1,27 @@
+: "\f083"; }
+
+.fa-campground:before {
+  content: "\f6bb"; }
+
+.fa-canadian-maple-leaf:before {
+  content: "\f785"; }
+
+.fa-candy-cane:before {
+  content: "\f786"; }
+
+.fa-cannabis:before {
+  content: "\f55f"; }
+
+.fa-capsules:before {
+  content: "\f46b"; }
+
+.fa-car:before {
+  content: "\f1b9"; }
+
+.fa-car-alt:before {
+  content: "\f5de"; }
+
+.fa-car-battery:before {
+  content: "\f5df"; }
+
+.fa-car-crash:b

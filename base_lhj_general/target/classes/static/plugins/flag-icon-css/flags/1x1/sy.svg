@@ -1,0 +1,3 @@
+/*! Summernote v0.8.12 | (c) 2013- Alan Hong and other contributors | MIT license */
+
+!function(e){e.extend(e.summernote.lang,{"bg-BG":{font:{bold:"Удебелен",italic:"Наклонен",underline:"Подчертан",clear:"Изчисти стиловете",height:"Височина",name:"Шрифт",strikethrough:"Задраскано",subscript:"Долен индекс",superscript:"Горен индекс",size:"Размер на шрифта"},image:{image:"Изображение",insert:"Постави картинка",resizeFull:"Цял размер",resizeHa

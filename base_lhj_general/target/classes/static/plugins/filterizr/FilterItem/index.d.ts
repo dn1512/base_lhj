@@ -1,0 +1,1 @@
+import { FilterizrState } from '../types

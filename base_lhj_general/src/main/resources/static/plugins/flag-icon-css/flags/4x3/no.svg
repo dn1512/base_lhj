@@ -1,0 +1,1 @@
+  // Firefox want us to check `-x` and `-y` variations as well\n  const { overflow, overflowX, overflowY } = getStyleComputedProperty(element);\n  if (/(auto|scroll|overlay)/.test(overflow + overflowY + overflowX)) {\n    return element;\n  }\n\n  return getScrollParent(getParentNode(element));\n}\n","/**\n * Returns th
