@@ -138,7 +138,7 @@ var vm;
               }
           });
           if (flag) {
-              var str = "<a href='javascript:;' class='active nav-item nav-link' style='position: relative' data-id='" + dataUrl + "'><button type='button' aria-hidden='true' class='close' style='position: absolute; top: -4px;right: -1px;'>×</button>" + menuName + " </a>";
+              var str = "<a href='javascript:;' class='active nav-item nav-link' style='position: relative' data-id='" + dataUrl + "'><button type='button' aria-hidden='true' class='close' style='position: absolute; top: 0px;right: 1px;font-size:14px;'>×</button>" + menuName + " </a>";
               $('.nav-item.nav-link').removeClass('active');
               var str1 = '<iframe class="LHJ_iframe" id="iframe' + dataId + '" name="iframe' + dataId + '"  width="100%" height="100%" src="' + dataUrl + '" frameborder="0" data-id="' + dataUrl + '" seamless></iframe>';
               $('.container-fluid').find('iframe.LHJ_iframe').hide();
