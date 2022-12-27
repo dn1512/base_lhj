@@ -5,31 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="554e6b8e-b51a-467d-a794-d995b3de6443" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/base_lhj_general_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/base_lhj_general.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lhj.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/biscussJS/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/biscussJS/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/demo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/system/accountManage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/system/accountManage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tj/lhj/LhjApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tj/lhj/LhjApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tj/lhj/system/account/service/SySAccountTokenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tj/lhj/system/account/service/SySAccountTokenService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tj/lhj/system/account/service/SysAccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tj/lhj/system/account/service/SysAccountService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tj/lhj/system/org/service/SysOrgService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tj/lhj/system/org/service/SysOrgService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/biscussJS/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/biscussJS/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/dist/js/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/dist/js/demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/pages/system/accountManage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/pages/system/accountManage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/pages/system/employeeManage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/system/employeeManage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +121,9 @@
     <option name="height" value="1043" />
   </component>
   <component name="ProjectId" id="1m4B4NU9MX1Hvaggx8tDxxCkMf0" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -237,10 +218,14 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="工件" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="build.tools" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -255,6 +240,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LhjApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="base_lhj_general" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.tj.lhj.LhjApplication" />
@@ -294,6 +290,7 @@
       <workItem from="1611967519441" duration="1891000" />
       <workItem from="1612577420495" duration="626000" />
       <workItem from="1613704597358" duration="32000" />
+      <workItem from="1672014555259" duration="4702000" />
     </task>
     <servers />
   </component>
